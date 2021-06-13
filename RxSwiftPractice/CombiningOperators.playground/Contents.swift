@@ -19,7 +19,7 @@ import RxSwift
  
 5. Switches
     + amb(o2): create new observable from o1, o2. Only emit element of the first observable (o1,o2) emited.
-    + switchLastest: ?
+    + switchLastest: emit element of the lastest observable joined.
 
 6.
     + reduce: use as normal reduce
@@ -70,7 +70,7 @@ debugPrint(" --- Combine Lastest Demo --- ")
 
 let chu = PublishSubject<String>()
 let so = PublishSubject<String>()
-let observable1 = Observable.zip(chu, so)
+let observable1 = Observable.combineLatest([chu, so])
 
 observable1
     .subscribe(onNext: { (value) in
@@ -90,5 +90,29 @@ chu.onNext("Bốn")
 so.onNext("4")
 so.onNext("5")
 so.onNext("6")
+
+debugPrint(" --- Zip Demo --- ")
+
+let chu1 = PublishSubject<String>()
+let so1 = PublishSubject<String>()
+let observable2 = Observable.zip([chu1, so1])
+
+observable2
+    .subscribe(onNext: { (value) in
+        print(value)
+    })
+    .disposed(by: bag)
+
+chu1.onNext("Một")
+chu1.onNext("Hai")
+so1.onNext("1")
+so1.onNext("2")
+
+chu1.onNext("Ba")
+so1.onNext("3")
+chu1.onCompleted() // After o1 complete, o2 still get the lastest element of o1 to combine and emit
+chu1.onNext("Bốn")
+so1.onNext("4")
+
 
 
