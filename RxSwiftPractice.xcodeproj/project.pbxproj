@@ -117,7 +117,6 @@
 				DF6F09262674B4FF00D4FDBD /* SceneDelegate.swift */,
 				DF6F09282674B4FF00D4FDBD /* RegisterViewController.swift */,
 				DFB5F83B2675FC3D00354082 /* ChangeAvatarViewController.swift */,
-				DFB5F84026762A1500354082 /* MusicListViewController.swift */,
 				DF6F092A2674B4FF00D4FDBD /* Main.storyboard */,
 				DF6F092D2674B50000D4FDBD /* Assets.xcassets */,
 				DF6F092F2674B50000D4FDBD /* LaunchScreen.storyboard */,
@@ -130,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB5F83E2676170B00354082 /* DemoViewModel.swift */,
+				DFB5F84026762A1500354082 /* MusicListViewController.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
