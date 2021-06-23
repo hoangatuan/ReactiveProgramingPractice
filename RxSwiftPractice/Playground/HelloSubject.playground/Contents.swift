@@ -23,6 +23,8 @@ let observable = publish.asObservable().subscribe({ print("Observable \($0)") })
 publish.onNext("c")
 publish.onCompleted()
 
+//publish.a
+
 //let sub2 = publish.subscribe(onNext: { print($0) }, onCompleted: { print("Sub2 Complete") }, onDisposed: { print("Disposed") }) // Sub2 will only receive event COMPLETE.
 //publish.onNext("c") // Not emit this because it completed.
 //

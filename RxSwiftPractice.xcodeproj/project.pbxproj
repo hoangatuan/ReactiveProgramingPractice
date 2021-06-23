@@ -10,6 +10,7 @@
 		DF0B163E267702BE00E399AF /* RxCocoaPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B163D267702BE00E399AF /* RxCocoaPlaygroundVC.swift */; };
 		DF0B16402677090500E399AF /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0B163F2677090500E399AF /* CustomView.xib */; };
 		DF0B1642267709D100E399AF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B1641267709D100E399AF /* CustomView.swift */; };
+		DF67DB2D26779F2200A0088D /* RxCocoaTraitDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF67DB2C26779F2200A0088D /* RxCocoaTraitDemoVC.swift */; };
 		DF6F09252674B4FF00D4FDBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F09242674B4FF00D4FDBD /* AppDelegate.swift */; };
 		DF6F09272674B4FF00D4FDBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F09262674B4FF00D4FDBD /* SceneDelegate.swift */; };
 		DF6F09292674B4FF00D4FDBD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F09282674B4FF00D4FDBD /* RegisterViewController.swift */; };
@@ -47,6 +48,7 @@
 		DF0B163D267702BE00E399AF /* RxCocoaPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaPlaygroundVC.swift; sourceTree = "<group>"; };
 		DF0B163F2677090500E399AF /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		DF0B1641267709D100E399AF /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		DF67DB2C26779F2200A0088D /* RxCocoaTraitDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaTraitDemoVC.swift; sourceTree = "<group>"; };
 		DF6F09212674B4FF00D4FDBD /* RxSwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6F09242674B4FF00D4FDBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF6F09262674B4FF00D4FDBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,9 +88,8 @@
 		DF0B16362676F64B00E399AF /* RxCocoa */ = {
 			isa = PBXGroup;
 			children = (
-				DF0B163D267702BE00E399AF /* RxCocoaPlaygroundVC.swift */,
-				DF0B163F2677090500E399AF /* CustomView.xib */,
-				DF0B1641267709D100E399AF /* CustomView.swift */,
+				DF67DB2A26779EDC00A0088D /* Binder */,
+				DF67DB2B26779EE700A0088D /* Trait */,
 			);
 			path = RxCocoa;
 			sourceTree = "<group>";
@@ -104,6 +105,24 @@
 				DF02F1282675BCCD00ACC52A /* TransformOperators.playground */,
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		DF67DB2A26779EDC00A0088D /* Binder */ = {
+			isa = PBXGroup;
+			children = (
+				DF0B163D267702BE00E399AF /* RxCocoaPlaygroundVC.swift */,
+				DF0B163F2677090500E399AF /* CustomView.xib */,
+				DF0B1641267709D100E399AF /* CustomView.swift */,
+			);
+			path = Binder;
+			sourceTree = "<group>";
+		};
+		DF67DB2B26779EE700A0088D /* Trait */ = {
+			isa = PBXGroup;
+			children = (
+				DF67DB2C26779F2200A0088D /* RxCocoaTraitDemoVC.swift */,
+			);
+			path = Trait;
 			sourceTree = "<group>";
 		};
 		DF6F09182674B4FF00D4FDBD = {
@@ -276,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF67DB2D26779F2200A0088D /* RxCocoaTraitDemoVC.swift in Sources */,
 				DF6F09292674B4FF00D4FDBD /* RegisterViewController.swift in Sources */,
 				DF6F09252674B4FF00D4FDBD /* AppDelegate.swift in Sources */,
 				DFB5F84126762A1500354082 /* MusicListViewController.swift in Sources */,
