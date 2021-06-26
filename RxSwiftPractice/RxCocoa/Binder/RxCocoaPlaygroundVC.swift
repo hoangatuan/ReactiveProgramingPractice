@@ -35,8 +35,11 @@ class RxCocoaPlaygroundVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindLabelToTextfield()
-        bindTextfieldToCustomViewLabel()
+//        bindLabelToTextfield()
+//        bindTextfieldToCustomViewLabel()
+        
+//        testBindErrorToBinder().bind(to: myTitle).disposed(by: bag) NOTE: // If we bind error to binder -> Crash.
+//        testBindErrorToBinder().catchErrorJustReturn("").bind(to: myTitle).disposed(by: bag)
     }
     
     private func bindLabelToTextfield() {
@@ -50,6 +53,14 @@ class RxCocoaPlaygroundVC: UIViewController {
     
     private func bindTextfieldToCustomViewLabel() {
         textField.rx.text.bind(to: customView.label.rx.text).disposed(by: bag)
+    }
+    
+    func testBindErrorToBinder() -> Observable<String> {
+        return Observable.create { sub in
+            sub.onError(APIError.error("Empty user name"))
+            
+            return Disposables.create()
+        }
     }
     
     @IBAction func didTapButton(_ sender: Any) {
