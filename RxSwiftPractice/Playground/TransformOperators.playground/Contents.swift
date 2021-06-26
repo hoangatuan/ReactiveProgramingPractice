@@ -9,8 +9,15 @@ import RxSwift
 2: Transforming inner observables
     + flatMap: get the observable in one Custom Object
     + flatMapLastest: = flatMap + switchLastest
- 
+    
+ 3.
+ + materialize() -> wrap element to next(element)
+ + dematerialize() -> unwrap next(element) to element
  */
+
+enum MyError: Error {
+    case anError
+}
 
 let bag = DisposeBag()
 
@@ -40,17 +47,18 @@ subject
     })
     .disposed(by: bag)
 
-// subject
-    subject.onNext(cuTy)
+    subject.onNext(cuTy) // add a different Student instance onto the source subject
     
     // cuTy
     cuTy.message.onNext("Có ai ở đây không?")
     cuTy.message.onNext("Có một mình mình thôi à!")
     cuTy.message.onNext("Buồn vậy!")
     cuTy.message.onNext("....")
-    
+//
+//    cuTy.message.onCompleted() // NOTE: Only this subject terminate
+//    cuTy.message.onError(MyError.anError) // NOTE: if emit an error -> all target flatmap will terminate.
     // subject
-    subject.onNext(cuTeo)
+    subject.onNext(cuTeo) // add a different Student instance onto the source subject
     
     // cuTy
     cuTy.message.onNext("Chào Tèo, bạn có khoẻ không?")

@@ -52,8 +52,10 @@ publish.onCompleted()
 //relay.subscribe(onNext: { print($0) }, onCompleted: { print("sub7 Complete") }, onDisposed: { print("Disposed") }) // receive buffersize event + event COMPLETE.
 //
 //
-//print(" ----- BehaviorRelay -----")
-//private let image = BehaviorRelay<Int>(value: 2)
-//image.accept(4)
-//
-//
+
+
+print(" ----- BehaviorRelay -----")
+private let image = BehaviorRelay<Int>(value: 2)
+image.accept(4)
+print(image.value)
+

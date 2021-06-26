@@ -63,3 +63,35 @@ let single2 = Single<String>.create { single in
     
     return Disposables.create()
 }
+
+print(" --- White sheet ---")
+
+//let someSingle = Single<Int>.create { single in
+//    single(.success(5))
+//
+//    return Disposables.create()
+//}
+//
+//let observableFromSingle = someSingle.asObservable().subscribe(onNext: {
+//    print("On next: \($0)")
+//}, onError: {
+//    print("On error: \($0)")
+//}, onCompleted: {
+//    print("On complete")
+//}, onDisposed: {
+//    print("on dispose")
+//})
+
+let someObservable = Observable<Int>.create({ observer in
+    observer.onNext(5)
+    observer.onNext(6) // NOTE: If an observable emit multiple event and asSingle -> single emit error
+    observer.onCompleted() // NOTE: Must call on complete to make as single emit event
+    
+    return Disposables.create()
+})
+
+let singleFormObservable = someObservable.asSingle().subscribe(onSuccess: {
+    print("Single success \($0)")
+}, onError: {
+    print("Single error \($0)")
+})

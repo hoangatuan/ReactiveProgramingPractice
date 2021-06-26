@@ -101,8 +101,8 @@
 				DFD260182674C06D0083D1C6 /* HelloSubject.playground */,
 				DFD260192674C4990083D1C6 /* Traits.playground */,
 				DF02F1262675A8A000ACC52A /* FilterOperations.playground */,
-				DF02F1272675B09200ACC52A /* CombiningOperators.playground */,
 				DF02F1282675BCCD00ACC52A /* TransformOperators.playground */,
+				DF02F1272675B09200ACC52A /* CombiningOperators.playground */,
 			);
 			path = Playground;
 			sourceTree = "<group>";

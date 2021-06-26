@@ -27,6 +27,7 @@ import RxSwift
      observer.onNext("4") // -> Not emit this.
      return Disposables.create() // ??
  }
+ //  NOTE: observer is type AnyObserver. AnyObserver is a generic type that facilitates adding values onto an observable sequence, which will then be emitted to subscribers.
 
  observable.subscribe(onNext: {
      print($0)
@@ -39,8 +40,13 @@ import RxSwift
  }).disposed(by: bag)
  */
 
-// NOTE:
-// - Each time subcribe to an observable, it will make that observable run body again => Should use share() .
+
+
+/* NOTE:
+ - Each time subcribe to an observable, it will make that observable run body again => Should use share() .
+ - Convert from event to element => use event.element
+*/
+
 
 var observable: AnyObserver<Bool>?
 let bag = DisposeBag()
