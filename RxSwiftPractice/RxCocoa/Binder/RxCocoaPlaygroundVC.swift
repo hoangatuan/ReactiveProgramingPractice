@@ -40,6 +40,20 @@ class RxCocoaPlaygroundVC: UIViewController {
         
 //        testBindErrorToBinder().bind(to: myTitle).disposed(by: bag) NOTE: // If we bind error to binder -> Crash.
 //        testBindErrorToBinder().catchErrorJustReturn("").bind(to: myTitle).disposed(by: bag)
+        
+        let observable2 = Observable<Int>.create { observer in
+            observer.onCompleted()
+            
+            return Disposables.create()
+        }
+
+        observable2.asSingle().subscribe { value in
+            print("value: \(value)")
+        } onError: { error in
+            print("Err: \(error)")
+        }
+
+
     }
     
     private func bindLabelToTextfield() {
