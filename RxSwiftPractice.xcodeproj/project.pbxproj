@@ -63,6 +63,7 @@
 		DF6F092D2674B50000D4FDBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF6F09302674B50000D4FDBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF6F09322674B50000D4FDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF7F6A4926974D6700E3DB7F /* Share.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Share.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF9DA57426889A1900DA6DC0 /* ActivityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTracker.swift; sourceTree = "<group>"; };
 		DFB5F83B2675FC3D00354082 /* ChangeAvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAvatarViewController.swift; sourceTree = "<group>"; };
 		DFB5F83E2676170B00354082 /* DemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewModel.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 				DFC3C1EE2687251D006D2570 /* Schedulers.playground */,
 				DFFF3544268A280A00975938 /* SideEffect.playground */,
 				DF5D176826934F20005B1941 /* ConverterNote.playground */,
+				DF7F6A4926974D6700E3DB7F /* Share.playground */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
