@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A666D1F92961E306002EBAAB /* SupportCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666D1F82961E306002EBAAB /* SupportCode.swift */; };
 		DF0B163E267702BE00E399AF /* RxCocoaPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B163D267702BE00E399AF /* RxCocoaPlaygroundVC.swift */; };
 		DF0B16402677090500E399AF /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0B163F2677090500E399AF /* CustomView.xib */; };
 		DF0B1642267709D100E399AF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B1641267709D100E399AF /* CustomView.swift */; };
@@ -44,6 +45,9 @@
 /* Begin PBXFileReference section */
 		33C56E8421F4117C36E0C57E /* Pods-RxSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 		77E46195243EB2E828F34AAF /* Pods_RxSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A666D1F62961E2F6002EBAAB /* HelloRx.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelloRx.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A666D1F82961E306002EBAAB /* SupportCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCode.swift; sourceTree = "<group>"; };
+		A666D1FB2961E33A002EBAAB /* README+RxSwift.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README+RxSwift.md"; sourceTree = "<group>"; };
 		CF482E8ED2369B559ACE07F9 /* Pods-RxSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		DF02F1262675A8A000ACC52A /* FilterOperations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterOperations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF02F1272675B09200ACC52A /* CombiningOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombiningOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -69,7 +73,6 @@
 		DFB5F83E2676170B00354082 /* DemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewModel.swift; sourceTree = "<group>"; };
 		DFB5F84026762A1500354082 /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		DFC3C1EE2687251D006D2570 /* Schedulers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Schedulers.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		DFD260172674B8220083D1C6 /* HelloRx.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelloRx.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DFD260182674C06D0083D1C6 /* HelloSubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelloSubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DFD260192674C4990083D1C6 /* Traits.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Traits.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DFFF3544268A280A00975938 /* SideEffect.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SideEffect.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -95,6 +98,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A666D1FA2961E325002EBAAB /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				A666D1FB2961E33A002EBAAB /* README+RxSwift.md */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
+		A6F381DD2961E2BF00C0980B /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				A666D1F62961E2F6002EBAAB /* HelloRx.playground */,
+				DF02F1272675B09200ACC52A /* CombiningOperators.playground */,
+				DF7F6A4926974D6700E3DB7F /* Share.playground */,
+				DFD260182674C06D0083D1C6 /* HelloSubject.playground */,
+				DFD260192674C4990083D1C6 /* Traits.playground */,
+				DF02F1262675A8A000ACC52A /* FilterOperations.playground */,
+				DF02F1282675BCCD00ACC52A /* TransformOperators.playground */,
+				DFC3C1EE2687251D006D2570 /* Schedulers.playground */,
+				DFFF3544268A280A00975938 /* SideEffect.playground */,
+				DF5D176826934F20005B1941 /* ConverterNote.playground */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		A6F381DE2961E2C500C0980B /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
 		DF0B16362676F64B00E399AF /* RxCocoa */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,21 +140,14 @@
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
-		DF19662A2675F8A00096D108 /* Playground */ = {
+		DF19662A2675F8A00096D108 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				DFD260172674B8220083D1C6 /* HelloRx.playground */,
-				DFD260182674C06D0083D1C6 /* HelloSubject.playground */,
-				DFD260192674C4990083D1C6 /* Traits.playground */,
-				DF02F1262675A8A000ACC52A /* FilterOperations.playground */,
-				DF02F1282675BCCD00ACC52A /* TransformOperators.playground */,
-				DF02F1272675B09200ACC52A /* CombiningOperators.playground */,
-				DFC3C1EE2687251D006D2570 /* Schedulers.playground */,
-				DFFF3544268A280A00975938 /* SideEffect.playground */,
-				DF5D176826934F20005B1941 /* ConverterNote.playground */,
-				DF7F6A4926974D6700E3DB7F /* Share.playground */,
+				A666D1F82961E306002EBAAB /* SupportCode.swift */,
+				A6F381DD2961E2BF00C0980B /* RxSwift */,
+				A6F381DE2961E2C500C0980B /* Combine */,
 			);
-			path = Playground;
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 		DF5D17692693552E005B1941 /* Table+Collection View */ = {
@@ -170,10 +198,11 @@
 		DF6F09232674B4FF00D4FDBD /* RxSwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
+				A666D1FA2961E325002EBAAB /* Docs */,
 				DF9DA57326889A0C00DA6DC0 /* Track */,
 				DF0B16362676F64B00E399AF /* RxCocoa */,
 				DFB5F83D2676161300354082 /* Networking */,
-				DF19662A2675F8A00096D108 /* Playground */,
+				DF19662A2675F8A00096D108 /* Playgrounds */,
 				DF6F09242674B4FF00D4FDBD /* AppDelegate.swift */,
 				DF6F09262674B4FF00D4FDBD /* SceneDelegate.swift */,
 				DF6F09282674B4FF00D4FDBD /* RegisterViewController.swift */,
@@ -334,6 +363,7 @@
 				DF6F09252674B4FF00D4FDBD /* AppDelegate.swift in Sources */,
 				DFB5F84126762A1500354082 /* MusicListViewController.swift in Sources */,
 				DFB5F83C2675FC3D00354082 /* ChangeAvatarViewController.swift in Sources */,
+				A666D1F92961E306002EBAAB /* SupportCode.swift in Sources */,
 				DFB5F83F2676170B00354082 /* DemoViewModel.swift in Sources */,
 				DF0B1642267709D100E399AF /* CustomView.swift in Sources */,
 				DF5D176B26935542005B1941 /* TableView+Cocoa.swift in Sources */,
