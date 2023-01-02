@@ -47,7 +47,11 @@
 		77E46195243EB2E828F34AAF /* Pods_RxSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A666D1F62961E2F6002EBAAB /* HelloRx.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelloRx.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A666D1F82961E306002EBAAB /* SupportCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCode.swift; sourceTree = "<group>"; };
-		A666D1FB2961E33A002EBAAB /* README+RxSwift.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README+RxSwift.md"; sourceTree = "<group>"; };
+		A666D1FB2961E33A002EBAAB /* RxSwift+Basics.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "RxSwift+Basics.md"; sourceTree = "<group>"; };
+		A66A9D4429628EBB00D4FC1B /* RxSwift+Operators.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "RxSwift+Operators.md"; sourceTree = "<group>"; };
+		A66A9D4529628EFB00D4FC1B /* RxSwift+RxCocoa.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "RxSwift+RxCocoa.md"; sourceTree = "<group>"; };
+		A66A9D462962930900D4FC1B /* RxSwift+ResourceManagement.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "RxSwift+ResourceManagement.md"; sourceTree = "<group>"; };
+		A66A9D47296294A500D4FC1B /* RxSwift+Note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "RxSwift+Note.md"; sourceTree = "<group>"; };
 		CF482E8ED2369B559ACE07F9 /* Pods-RxSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		DF02F1262675A8A000ACC52A /* FilterOperations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterOperations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF02F1272675B09200ACC52A /* CombiningOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombiningOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -101,9 +105,21 @@
 		A666D1FA2961E325002EBAAB /* Docs */ = {
 			isa = PBXGroup;
 			children = (
-				A666D1FB2961E33A002EBAAB /* README+RxSwift.md */,
+				A66A9D4329628E6200D4FC1B /* RxSwift */,
 			);
 			path = Docs;
+			sourceTree = "<group>";
+		};
+		A66A9D4329628E6200D4FC1B /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				A666D1FB2961E33A002EBAAB /* RxSwift+Basics.md */,
+				A66A9D4429628EBB00D4FC1B /* RxSwift+Operators.md */,
+				A66A9D4529628EFB00D4FC1B /* RxSwift+RxCocoa.md */,
+				A66A9D462962930900D4FC1B /* RxSwift+ResourceManagement.md */,
+				A66A9D47296294A500D4FC1B /* RxSwift+Note.md */,
+			);
+			path = RxSwift;
 			sourceTree = "<group>";
 		};
 		A6F381DD2961E2BF00C0980B /* RxSwift */ = {
