@@ -76,6 +76,8 @@ Read more in RxSwift+RxCocoa
 ## Custom Reactive Extension
 
 ### Extend .rx to provide more function
+
+Reactive has 1 typealias: Base
 `
 extension Reactive where Base: T {
 
@@ -83,6 +85,8 @@ extension Reactive where Base: T {
 `
 
 ### Create custom Operators
+
+ObservableType has 1 typealias: Element
 `
 extension ObservableType where Element == ... {
 

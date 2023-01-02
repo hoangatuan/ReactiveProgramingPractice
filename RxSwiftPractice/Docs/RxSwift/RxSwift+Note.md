@@ -21,3 +21,7 @@ Convert/bind from type A to type B:
 - A button can have rx.tap and IBaction at the same time.
 - if set text property, must call sendActions(for: .valueChanged) to trigger subscriber.
     - https://stackoverflow.com/questions/33815399/rxswift-uilabel-field-not-being-updated-when-uitextfield-updated-programmatica
+
+4.
+- Use `asObservable` to convert subject to Observable -> hide `send(event)` actions from outside client (example: ViewModel hide send(event) from ViewController)
+- Create Binder in ReactiveExtension for more clear and clean.
