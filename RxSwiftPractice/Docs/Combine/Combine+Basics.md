@@ -6,8 +6,9 @@
 - Side Effects
 - Debugging
 - Resource Management
+- Note
 
-## Publisher
+## Publisher<Output, Failure>
 
 ### Definition
 
@@ -26,12 +27,26 @@
 - `Published`:
     + creates a publisher for value in addition to being accessible as a regular property.
     + Use the $ prefix on the @Published property to gain access to its underlying publisher
+    + the values emitted will be the initial value at subscription time followed by new values when the property changes
+    > Note: ***When a @Published variable is changed, its publisher publishes the new value before the variable itself is set to the new value***
 
 - `Future`: ***Perform async work immediately (without waiting for subscriptions) only once and deliver the result to any amount of subscribers.***
     + ***asynchronously produce a single result and then complete***
     + Upon creation, it immediately invokes your closure to start computing the result and fulfill the promise ***as soon as possible***
     + ***Future is a class, not a struct.***
     + ***It stores the result of the fulfilled Promise and delivers it to current and future subscribers.*** ( = share(scope: .forever) in RxSwift?)
+    
+    + Can wrap Future with `Deferred`, so that Future will not execute until it has a subscriber.
+    `
+    Deferred {
+        Future<I,O> { promise ... }
+    }
+    `
+- **Empty**: A publisher never emit value
+
+- **AnyPublisher**
+
+- Timer Publisher: https://www.apeth.com/UnderstandingCombine/publishers/publisherstimer.html
 
 ### Subject
 
@@ -54,22 +69,34 @@
 
 ### How to subscribe
 
-- `subscribe`
+- subscribe(x: Subscriber)
+- func sink(receiveCompletion: f1, receiveValue: f2) -> AnyCancellable
 
 ## Subscriber
 
 - is a protocol that defines the requirements for a type to be able to receive input from a publisher.
 - Create custom subscriber
 
+### How to create:
+
+***Subscribers.Assign(object: self.iv, keyPath: \UIImageView.image)***
+
 ### How to subscribe:
 
-- `sink(_:_:)`: with 2 closures, 1 to handle completion event (success/failure), e to handle values event
-- `assign(to:on:):
+- sink(_:_:): with 2 closures, 1 to handle completion event (success/failure), e to handle values event
+    `
+    func sink(receiveCompletion: f1, receiveValue: f2) -> AnyCancellable
+    `
+    
+- assign(to:on:):
     + assign the received value to a KVO-compliant property of an object
     + only works on publishers that cannot fail
-    + Easily to create retain cycle
+    + ***Easily to create retain cycle***
         Retain cycle example:  .assign(to: \.currentDate, on: self)
-        Fix retain cycle:  .assign(to: &$currentDate)
+        Fix retain cycle:
+            + .assign(to: &$currentDate)
+            + sink { [weak self] ... }
+            + Use `CombineExt`: .assign(to: \.currentDate, on: self, ownership: .weak)
 
 ## Cancellable
 
@@ -116,6 +143,13 @@ Read more in Combine+ResourceManagement
 - .retry(x)
 - .replaceError(with: x)
 
+**Catch**
+`
+.catch { error in 
+    return Empty<T,Never>()
+}
+`
+
 ## Schedulers
 
 - subscribe(on:): creates the subscription (start the work) on the specified scheduler.
@@ -128,3 +162,12 @@ Read more on Combine+Custom
 ## Special
 - drop(untilOutputFrom:): Wait for other publisher to publish first value
 - prefix(untilOutputFrom:)
+
+## Note
+
+- More info at Combine+Note
+
+## Docs
+
+- https://www.apeth.com/UnderstandingCombine/tricksandtips.html
+- https://medium.com/@mshcheglov/mvvm-design-pattern-with-combine-framework-on-ios-5ff911011b0b

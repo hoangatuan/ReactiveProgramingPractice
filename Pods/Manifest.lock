@@ -1,4 +1,6 @@
 PODS:
+  - CombineCocoa (0.4.1)
+  - CombineExt (1.8.0)
   - Differentiator (4.0.1)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -10,27 +12,48 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.2)
+  - RxSwiftExt (5.2.0):
+    - RxSwiftExt/Core (= 5.2.0)
+    - RxSwiftExt/RxCocoa (= 5.2.0)
+  - RxSwiftExt/Core (5.2.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.2.0):
+    - RxCocoa (~> 5.0)
+    - RxSwiftExt/Core
+  - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - CombineCocoa
+  - CombineExt
   - RxCocoa (~> 5.0)
   - RxDataSources
   - RxSwift (~> 5.0)
+  - RxSwiftExt (~> 5)
+  - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
   trunk:
+    - CombineCocoa
+    - CombineExt
     - Differentiator
     - RxCocoa
     - RxDataSources
     - RxRelay
     - RxSwift
+    - RxSwiftExt
+    - SnapKit
 
 SPEC CHECKSUMS:
+  CombineCocoa: e5210dbfb480ff251078929459ac17e750e7af1d
+  CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 77aec850a868bef6889421177d2af2a54e35f3dc
+PODFILE CHECKSUM: 1819f83df64a44294bbbb9da7339a2e398dc0cb5
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3
