@@ -13,6 +13,7 @@ final class CombineMovieDetailViewController: UIViewController {
 
     private let viewModel: CombineMovieDetailViewModel
     private var cancellables: [AnyCancellable] = []
+    private let tapBackButton = PassthroughSubject<Void, Never>()
 
     init(viewModel: CombineMovieDetailViewModel) {
         self.viewModel = viewModel
@@ -39,6 +40,13 @@ final class CombineMovieDetailViewController: UIViewController {
         view.backgroundColor = .white
         setupViews()
         setupBinding()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isMovingFromParent {
+            tapBackButton.send(())
+        }
     }
 
     private func setupViews() {
@@ -71,7 +79,10 @@ final class CombineMovieDetailViewController: UIViewController {
     }
 
     private func setupBinding() {
-        let output = viewModel.transform()
+        let output = viewModel.transform(
+            input: .init(tapBackButton: tapBackButton.eraseToAnyPublisher())
+        )
+
         output.movieDetail
             .receive(on: DispatchQueue.main)
             .sink { [weak self] movieDetail in
@@ -82,5 +93,15 @@ final class CombineMovieDetailViewController: UIViewController {
                 self?.ratingLabel.text = movieDetail.imdbRating
                 self?.actorsLabel.text = movieDetail.actors
             }.store(in: &cancellables)
+
+        output.goBack.sink(receiveValue: { }).store(in: &cancellables)
+
+        output.isLoading.sink { isLoading in
+            debugPrint("Show loading: \(isLoading)")
+        }.store(in: &cancellables)
+
+        output.onError.sink { error in
+            debugPrint("Show error: \(error)")
+        }.store(in: &cancellables)
     }
 }

@@ -8,32 +8,51 @@
 import Foundation
 import Combine
 
-final class CombineMovieSearchViewModel {
+final class CombineMovieSearchViewModel: BaseViewModel {
     struct Input {
         let textDidChange: AnyPublisher<String, Never>
+        let selectMovie: AnyPublisher<String, Never>
     }
 
     struct Output {
+        let isLoading: AnyPublisher<Bool, Never>
+        let onError: AnyPublisher<Error, Never>
         let listMovies: AnyPublisher<[Movie], Never>
+        let navigateToMovieDetail: AnyPublisher<Void, Never>
     }
 
     private let useCase: ISearchMovieUseCase
+    private let loadingPublisher = PassthroughSubject<Bool, Never>()
+    private let errorPublisher = PassthroughSubject<Error, Never>()
+    let stepper = PassthroughSubject<Step, Never>()
+
     init(useCase: ISearchMovieUseCase) {
         self.useCase = useCase
     }
 
     func transform(input: Input) -> Output {
-        // TODO: Handle Loading & error
+        let navigateToMovieDetail = input.selectMovie.handleEvents(receiveOutput: { [weak stepper] in
+            stepper?.send(.moveToMovieDetail(id: $0))
+        })
+            .map { _ in }
+            .eraseToAnyPublisher()
+
         let listMovies = input.textDidChange
             .map { [weak self] input -> AnyPublisher<[Movie], Never> in
                 guard let self = self else { return Just<[Movie]>([]).eraseToAnyPublisher() }
                 return self.fetchListMovie(title: input)
+                    .handleLoadingAndError(loadingPublisher: self.loadingPublisher, errorPublisher: self.errorPublisher)
                     .replaceError(with: [])
                     .eraseToAnyPublisher()
             }.switchToLatest()
             .eraseToAnyPublisher()
         
-        return Output(listMovies: listMovies)
+        return Output(
+            isLoading: loadingPublisher.eraseToAnyPublisher(),
+            onError: errorPublisher.eraseToAnyPublisher(),
+            listMovies: listMovies,
+            navigateToMovieDetail: navigateToMovieDetail
+        )
     }
 
     private func fetchListMovie(title: String) -> Future<[Movie], Error> {

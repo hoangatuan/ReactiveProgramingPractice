@@ -15,6 +15,7 @@ final class CombineMovieSearchViewController: UIViewController {
     private let viewModel: CombineMovieSearchViewModel
     private var cancellables: [AnyCancellable] = []
     private lazy var dataSource = makeDataSource()
+    private let selectMovie = PassthroughSubject<String, Never>()
 
     init(viewModel: CombineMovieSearchViewModel) {
         self.viewModel = viewModel
@@ -64,15 +65,27 @@ final class CombineMovieSearchViewController: UIViewController {
             input: .init(
                 textDidChange: searchBar.searchTextField.textPublisher
                     .compactMap { $0 }
+                    .removeDuplicates()
                     .throttle(for: 0.6, scheduler: DispatchQueue.main, latest: true)
                     .dropFirst()
-                    .eraseToAnyPublisher()
+                    .eraseToAnyPublisher(),
+                selectMovie: selectMovie.eraseToAnyPublisher()
             )
         )
 
         output.listMovies.sink { [weak self] movies in
             self?.update(with: movies, animate: false)
         }.store(in: &cancellables)
+
+        output.isLoading.sink { isLoading in
+            debugPrint("Show loading: \(isLoading)")
+        }.store(in: &cancellables)
+
+        output.onError.sink { error in
+            debugPrint("Show error: \(error)")
+        }.store(in: &cancellables)
+
+        output.navigateToMovieDetail.sink(receiveValue: { }).store(in: &cancellables)
     }
 }
 
@@ -81,12 +94,7 @@ extension CombineMovieSearchViewController: UITableViewDelegate {
         let snapshot = dataSource.snapshot()
         tableView.deselectRow(at: indexPath, animated: true)
 
-        // TODO: Add Coordinator
-        let movieDetailVC = CombineMovieDetailViewController(viewModel: CombineMovieDetailViewModel(
-            movieId: snapshot.itemIdentifiers[indexPath.row].imdbID,
-            useCase: SearchMovieUseCase(repository: SearchMovieRepository())
-        ))
-        navigationController?.pushViewController(movieDetailVC, animated: true)
+        selectMovie.send(snapshot.itemIdentifiers[indexPath.row].imdbID)
     }
 }
 

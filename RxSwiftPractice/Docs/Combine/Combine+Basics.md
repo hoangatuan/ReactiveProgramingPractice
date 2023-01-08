@@ -44,6 +44,8 @@
     `
 - **Empty**: A publisher never emit value
 
+- **Fail**: A publisher that immediately terminates with the specified error.
+
 - **AnyPublisher**
 
 - Timer Publisher: https://www.apeth.com/UnderstandingCombine/publishers/publisherstimer.html
