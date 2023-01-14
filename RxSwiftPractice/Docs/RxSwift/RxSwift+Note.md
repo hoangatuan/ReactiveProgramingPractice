@@ -25,3 +25,10 @@ Convert/bind from type A to type B:
 4.
 - Use `asObservable` to convert subject to Observable -> hide `send(event)` actions from outside client (example: ViewModel hide send(event) from ViewController)
 - Create Binder in ReactiveExtension for more clear and clean.
+
+5. 
+There are 3 types of events: next(Element), error(Error), complete
+- if a subscription chain generates an error or a completion event, the entire chain shuts down.
+- If return error from `flatMap`, it will terminal the whole subscription chain. Otherwise, if `flatMap` return .completed events -> It doesn't pass .complete to the chain. Instead, it's simply a signal that this subscription has completed and you no longer need to monitor it.
+- the Observable inside `flatMap` will only be subscribe when it starts receive event to create that Observable.
+

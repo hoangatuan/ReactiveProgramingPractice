@@ -13,9 +13,9 @@
     - skipUntil(observable): Skip until another observable emit first element.
 
 3. Taking Operators
-    - take(n): Only receive n first element
+    - take(n): Only receive n first element & emit complete event
     - takeWhile { }: take while a condition is met, then ignore everythings
-    - takeUntil(observable): Take until another observable emit first element.
+    - takeUntil(observable): Take until another observable emit first element & emit complete event.
  
 4. Distinct Operators
     - distinctUntilChanged(): Ignore same element continuosly
