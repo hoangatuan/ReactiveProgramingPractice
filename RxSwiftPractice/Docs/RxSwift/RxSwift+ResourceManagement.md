@@ -37,3 +37,28 @@ Understand share(replay:scope:)
     - 2 options: `.whileConnected` & `.forever`
     - `whileConnected`: When the number of subscribers drops from 1 to 0, the internal “cache” of the shared stream is cleared. -> New subscriber will need to call new operations
     - `forever`: The internal cache of the stream is not cleared, even after the number of subscribers drops from 1 to 0.
+
+### Memory Management
+- Using `withUnretained`
+
+Instead of using `weak self` each time you use `map`, `flatMap`, ... Now RxSwift 6 provide `withUnretained` to capture self as weak.
+
+viewModel.importantInfo
+  .withUnretained(self) // Tuple of (Object, Element)
+  .subscribe(onNext: { owner, info in 
+    owner.doImportantTask(with: info)
+  })
+  .disposed(by: disposeBag)
+
+But to handle error/complete event, you will still need to use [weak self]: More info here: https://betterprogramming.pub/using-withunretained-in-rxswift-6-0-8e3e221b37ee
+-> So you can use this custom func:
+
+observable
+        .subscribe(with: self) { (owner, string) in
+            owner.doSomething(string)
+        } onError: { (owner, error) in
+            owner.handleError(error)
+        } onCompleted: { (owner) in
+            owner.handleDone()
+        }
+        .disposed(by: bag)

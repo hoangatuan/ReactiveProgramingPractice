@@ -31,6 +31,7 @@
 		A63481D0296A77B4001572A0 /* CombineMovieDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63481CF296A77B4001572A0 /* CombineMovieDetailCoordinator.swift */; };
 		A666D1F92961E306002EBAAB /* SupportCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A666D1F82961E306002EBAAB /* SupportCode.swift */; };
 		A66A9D4E29629BCB00D4FC1B /* Table.png in Resources */ = {isa = PBXBuildFile; fileRef = A66A9D4D29629BCB00D4FC1B /* Table.png */; };
+		A698F65C2970584A0080B3DD /* CombineDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698F65B2970584A0080B3DD /* CombineDIContainer.swift */; };
 		DF0B163E267702BE00E399AF /* RxCocoaPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B163D267702BE00E399AF /* RxCocoaPlaygroundVC.swift */; };
 		DF0B16402677090500E399AF /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0B163F2677090500E399AF /* CustomView.xib */; };
 		DF0B1642267709D100E399AF /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B1641267709D100E399AF /* CustomView.swift */; };
@@ -102,6 +103,8 @@
 		A66A9D4B296299B200D4FC1B /* Combine+ResourceManagement.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Combine+ResourceManagement.md"; sourceTree = "<group>"; };
 		A66A9D4C29629B9A00D4FC1B /* Combine+Custom.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Combine+Custom.md"; sourceTree = "<group>"; };
 		A66A9D4D29629BCB00D4FC1B /* Table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Table.png; sourceTree = "<group>"; };
+		A698F65B2970584A0080B3DD /* CombineDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDIContainer.swift; sourceTree = "<group>"; };
+		A6CAD1A729E407E800C54D5E /* Question.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Question.playground; path = RxSwiftPractice/Playgrounds/Question.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CF482E8ED2369B559ACE07F9 /* Pods-RxSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		DF02F1262675A8A000ACC52A /* FilterOperations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FilterOperations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DF02F1272675B09200ACC52A /* CombiningOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombiningOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -260,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A61798312963D86E006D7569 /* Scenes */,
+				A698F65B2970584A0080B3DD /* CombineDIContainer.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -360,6 +364,7 @@
 		A6F381DD2961E2BF00C0980B /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				A6CAD1A729E407E800C54D5E /* Question.playground */,
 				A666D1F62961E2F6002EBAAB /* HelloRx.playground */,
 				DF02F1272675B09200ACC52A /* CombiningOperators.playground */,
 				DF7F6A4926974D6700E3DB7F /* Share.playground */,
@@ -623,6 +628,7 @@
 				A61798402963E42B006D7569 /* DBError.swift in Sources */,
 				DF5D176D26936528005B1941 /* TableView+CocoaAdvance.swift in Sources */,
 				DF67DB2D26779F2200A0088D /* RxCocoaTraitDemoVC.swift in Sources */,
+				A698F65C2970584A0080B3DD /* CombineDIContainer.swift in Sources */,
 				DF6F09292674B4FF00D4FDBD /* RegisterViewController.swift in Sources */,
 				DF6F09252674B4FF00D4FDBD /* AppDelegate.swift in Sources */,
 				A61798292963D635006D7569 /* SearchMovieRepository.swift in Sources */,

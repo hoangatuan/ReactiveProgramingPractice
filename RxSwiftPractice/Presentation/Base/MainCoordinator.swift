@@ -16,7 +16,7 @@ protocol Coordinator: AnyObject {
     func start()
     func removeAllChildCoordinator()
     
-    // Need to call this function when finish to clean up memory
+    /// Need to call this function when finish to clean up memory
     func didFinish(child: Coordinator, metadata: [String: Any?]?)
 }
 

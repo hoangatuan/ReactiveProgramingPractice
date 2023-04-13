@@ -44,6 +44,20 @@ Observable is just a sequence produce events over a period of time, and it's rea
 Traits is a wrapper ***struct*** with a property is Observable Sequence inside it.
 3 types: Single, Maybe, Completable
 
+## Infallible
+- Same as Observable but never emit error
+
+Infallible<String>.create { observer in
+    observer(.next("Hello"))
+    observer(.next("World"))
+    observer(.completed)
+    // No way to error here
+
+    return Disposables.create {
+        // Clean-up
+    }
+}
+
 ## Subjects
 
 Subject work as Observable and Observer, and they can emit value manually.

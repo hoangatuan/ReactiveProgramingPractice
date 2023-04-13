@@ -52,30 +52,59 @@ import RxCocoa
 var observable: AnyObserver<Bool>?
 let bag = DisposeBag()
 
-func aaa() -> Observable<Bool> {
-    return Observable.create { subcriber in
-        observable = subcriber
-        print("ABC")
-        subcriber.onNext(false)
-        
-        return Disposables.create()
-    }.share(replay: 1)
+//func aaa() -> Observable<Bool> {
+//    return Observable.create { subcriber in
+//        observable = subcriber
+//        print("ABC")
+//        subcriber.onNext(false)
+//
+//        return Disposables.create()
+//    }
+////    .share(replay: 1)
+//}
+//
+//func check() {
+//    let isSuccess = Observable.just(true)
+//        .do(onNext: { _ in
+//            print("AAA")
+//        })
+//
+//    isSuccess.filter({ $0 })
+//        .subscribe { _ in
+//            print("true 1")
+//        }.disposed(by: bag)
+//
+////    isSuccess.filter({ !$0 })
+////        .subscribe { _ in
+////            print("false 1")
+////        }.disposed(by: bag)
+//}
+//
+//
+//check()
+//check()
+
+let isSuccess = Observable.just(true)
+    .do(onNext: { _ in
+        print("AAA")
+    })
+
+isSuccess.filter({ $0 })
+    .subscribe { _ in
+        print("true 1")
+    }.disposed(by: bag)
+
+let publishSubject = PublishSubject<Void>()
+
+func createee() -> Observable<Void> {
+    return publishSubject.do(onNext: {
+        print("Newly createee observable on next")
+    })
+        .map({ _ in return 2 })
+        .map { _ in return () }
 }
 
-func check() {
-    let isSuccess = aaa()
+let newlyObservable = createee()
 
-    isSuccess.filter({ $0 })
-        .subscribe { _ in
-            print("true")
-        }.disposed(by: bag)
-
-    isSuccess.filter({ !$0 })
-        .subscribe { _ in
-            print("false")
-        }.disposed(by: bag)
-}
-
-
-check()
-check()
+print(publishSubject)
+print(newlyObservable)

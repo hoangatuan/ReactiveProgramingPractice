@@ -51,7 +51,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>11</integer>
 		</dict>
 		<key>ConverterNote (Playground) 1.xcscheme</key>
 		<dict>
@@ -100,7 +100,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>16</integer>
 		</dict>
 		<key>FilterOperations (Playground) 1.xcscheme</key>
 		<dict>
@@ -149,7 +149,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>17</integer>
 		</dict>
 		<key>HelloRx (Playground) 1.xcscheme</key>
 		<dict>
@@ -198,7 +198,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>15</integer>
 		</dict>
 		<key>HelloSubject (Playground) 1.xcscheme</key>
 		<dict>
@@ -247,7 +247,28 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>12</integer>
+		</dict>
+		<key>Question (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
+		<key>Question (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>23</integer>
+		</dict>
+		<key>Question (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>21</integer>
 		</dict>
 		<key>Schedulers (Playground) 1.xcscheme</key>
 		<dict>
@@ -296,7 +317,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>19</integer>
 		</dict>
 		<key>Share (Playground) 1.xcscheme</key>
 		<dict>
@@ -345,7 +366,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>20</integer>
 		</dict>
 		<key>SideEffect (Playground) 1.xcscheme</key>
 		<dict>
@@ -394,7 +415,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>13</integer>
 		</dict>
 		<key>Traits (Playground) 1.xcscheme</key>
 		<dict>
@@ -443,7 +464,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>14</integer>
 		</dict>
 		<key>TransformOperators (Playground) 1.xcscheme</key>
 		<dict>
@@ -492,7 +513,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>18</integer>
 		</dict>
 	</dict>
 </dict>

@@ -6,7 +6,7 @@ import RxCocoa
  - PublishSubject: only emit element after subscribed
  - BehaviorSubject: emit last element and element after subscribed
  - ReplaySubject: emit n element and element after subscribed // or use createUnbounded() for cache all emited element
- - BehaviorRelay & SubjectRelay: Never end, only emit value, never emit complete or error.
+ - BehaviorRelay & SubjectRelay & ReplayRelay (RxSwift6): Never end, only emit value, never emit complete or error.
  
  */
 
@@ -58,4 +58,29 @@ print(" ----- BehaviorRelay -----")
 private let image = BehaviorRelay<Int>(value: 2)
 image.accept(4)
 print(image.value)
+
+func execute(param: Bool) -> Single<Void> {
+    if param {
+        return .just(())
+    }
+
+    return .just(())
+        .do(onSuccess: {
+            print("a")
+        })
+}
+
+let disposeBag = DisposeBag()
+
+
+Observable.of((), (), ())
+//    .delaySubscription(.seconds(2), scheduler: MainScheduler.instance)
+    .concatMap {
+        Observable.empty().delay(.seconds(1), scheduler: MainScheduler.instance).startWith($0)
+    }
+    .do(onNext: {
+        print("ABC")
+    })
+    .subscribe()
+    .disposed(by: disposeBag)
 
